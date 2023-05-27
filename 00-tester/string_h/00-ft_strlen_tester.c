@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen_tester.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 17:47:43 by npentini          #+#    #+#             */
-/*   Updated: 2023/05/26 20:57:42 by npentini         ###   ########.fr       */
+/*   Created: 2023/05/26 21:29:57 by npentini          #+#    #+#             */
+/*   Updated: 2023/05/26 21:43:16 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdio.h>
+#include <string.h>
 
-# include <unistd.h>
-# include <stdlib.h>
+size_t	ft_strlen(const char *s);
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
-int	ft_isprint(int c);
+int	main(int argc, char **argv)
+{
+	const char	*s;
+	size_t		length;
 
-#endif
+	if (argc == 2)
+	{
+		s = argv[1];
+		length = ft_strlen(s);
+		printf("Myfunc: Length of \"%s\" is %zu.\n", s, length);
+		printf("String.h: Leng of \"%s\" is %zu.\n", s, strlen(s));
+	}
+	else
+		printf("Usage: ./program \"string\"\n");
+	return (0);
+}

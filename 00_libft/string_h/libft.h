@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   02_ft_alnum.c                                      :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 18:11:58 by npentini          #+#    #+#             */
-/*   Updated: 2023/05/26 18:15:34 by npentini         ###   ########.ae       */
+/*   Created: 2023/05/26 17:47:43 by npentini          #+#    #+#             */
+/*   Updated: 2023/05/28 00:11:27 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int ft_alnum.c
-{
-	if ((c = > 'a' && c <= 'z') || (c = > 'A' && c <= 'Z') || (c >= '0'
-			&& c <= '9'))
-		return (1);
-	else
-		return (0);
-}
+# include <unistd.h>
+# include <stdlib.h>
+
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+size_t	ft_strlen(const char *c);
+void	*ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
+
+#endif

@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   03-ft_isascii_tester.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 17:47:43 by npentini          #+#    #+#             */
-/*   Updated: 2023/05/26 20:57:42 by npentini         ###   ########.fr       */
+/*   Created: 2023/05/26 20:33:50 by npentini          #+#    #+#             */
+/*   Updated: 2023/05/26 20:49:29 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdio.h>
+#include <stdlib.h>
 
-# include <unistd.h>
-# include <stdlib.h>
-
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isalnum(int c);
 int	ft_isascii(int c);
-int	ft_isprint(int c);
 
-#endif
+int	main(int argc, char **argv)
+{
+	int	c;
+
+	if (argc == 2)
+	{
+		c = atoi(argv[1]);
+		if (ft_isascii(c))
+			printf("\"%c\" is an ASCII character.\n", c);
+		else
+			printf("\"%c\" is not an ASCII character.\n", c);
+	}
+	else
+		printf("Add 1 argument.\n");
+	return (0);
+}

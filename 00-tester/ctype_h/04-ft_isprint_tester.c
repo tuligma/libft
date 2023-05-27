@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   04-ft_isprint_tester.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 17:47:43 by npentini          #+#    #+#             */
-/*   Updated: 2023/05/26 20:57:42 by npentini         ###   ########.fr       */
+/*   Created: 2023/05/26 21:00:34 by npentini          #+#    #+#             */
+/*   Updated: 2023/05/26 21:06:28 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdio.h>
+#include <stdlib.h>
 
-# include <unistd.h>
-# include <stdlib.h>
-
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
 int	ft_isprint(int c);
 
-#endif
+int	main(int argc, char **argv)
+{
+	int	c;
+
+	if (argc == 2)
+	{
+		c = atoi(argv[1]);
+		if (ft_isprint(c))
+			printf("\"%c\" is a printable character.\n", c);
+		else
+			printf("\"%c\" is not printable character.\n", c);
+	}
+}
