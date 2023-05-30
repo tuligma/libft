@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memmove_tester.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 17:47:43 by npentini          #+#    #+#             */
-/*   Updated: 2023/05/30 00:25:58 by npentini         ###   ########.fr       */
+/*   Created: 2023/05/29 22:35:08 by npentini          #+#    #+#             */
+/*   Updated: 2023/05/30 00:04:25 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdio.h>
+#include "libft.h"
+#include <string.h>
 
-# include <unistd.h>
-# include <stdlib.h>
-
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *c);
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dest, void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
-size_t strlcpy(char *dest, const char *src, size_t size);
 
-#endif
+int	main(void)
+{
+	char	src[] = "Hello, World!";
+//	char	dest[20];
+
+	printf("Source String: %s\n", src);
+	ft_memmove(src, src + 7, 5 * sizeof(char));
+	//memmove(src, src + 8, 2 * sizeof(char));
+	printf("Copied string: %s\n", src);
+	return (0);
+}

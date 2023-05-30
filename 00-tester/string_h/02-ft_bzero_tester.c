@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 00:13:16 by npentini          #+#    #+#             */
-/*   Updated: 2023/05/28 00:40:23 by npentini         ###   ########.fr       */
+/*   Updated: 2023/05/28 18:41:40 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ int	main(int argc, char **argv)
 		else
 		{
 			ft_bzero(argv[1], buff_size);
-			printf("After ft_bzero: \"%s\"\n", argv[1]);
-			printf("After Native_bzero: \"%s\"\n", (char *)memset(argv[1], '0', buff_size));
+			printf("After ft_bzero: \"%.s\"\n", argv[1]);
+			ft_bzero(argv[1], buff_size);
+			printf("After Native_bzero: \"%s\"\n", (char *)memset(argv[1], 0, buff_size));
 		}
 	}
 	else
 		printf("Usage: ./program \"string\" buffer_size\n");
-	return(0);
+	return (0);
 }
