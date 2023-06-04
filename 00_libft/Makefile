@@ -6,7 +6,7 @@
 #    By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/03 08:02:10 by npentini          #+#    #+#              #
-#    Updated: 2023/06/03 08:44:13 by npentini         ###   ########.fr        #
+#    Updated: 2023/06/03 09:00:49 by npentini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ $(NAME): $(OBJS)
 clean:
 	$(DELETE) $(OBJS)
 
-fclean:
+fclean: clean
 	$(DELETE) $(NAME)
 
 re: fclean all
