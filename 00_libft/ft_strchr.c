@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 23:19:32 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/03 10:05:41 by npentini         ###   ########.fr       */
+/*   Updated: 2023/06/05 00:45:49 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 		return ((char *)s + ft_strlen(s));
 	while (*s != '\0')
 	{

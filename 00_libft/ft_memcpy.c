@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 18:48:27 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/04 14:07:13 by npentini         ###   ########.fr       */
+/*   Updated: 2023/06/04 23:33:19 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, void const *src, size_t n)
 	d = dest;
 	s = src;
 	i = 0;
-	if (d == NULL || s == NULL)
+	if (d == NULL && s == NULL)
 		return (NULL);
 	while (i < n)
 	{
