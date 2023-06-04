@@ -6,17 +6,17 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/28 18:48:27 by npentini          #+#    #+#             */
-/*   Updated: 2023/05/28 19:09:30 by npentini         ###   ########.fr       */
+/*   Updated: 2023/06/04 14:07:13 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, void *src, size_t n)
+void	*ft_memcpy(void *dest, void const *src, size_t n)
 {
-	char	*d;
-	char	*s;
-	size_t	i;
+	const char	*s;
+	char		*d;
+	size_t		i;
 
 	d = dest;
 	s = src;
