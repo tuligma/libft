@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_tester.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew_tester.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 20:08:44 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/08 20:54:03 by npentini         ###   ########.fr       */
+/*   Created: 2023/06/06 21:22:21 by npentini          #+#    #+#             */
+/*   Updated: 2023/06/06 21:43:41 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,19 @@
 
 int	main(int argc, char **argv)
 {
-	char	**result;
-	char	*s;
-	char	*c;
-	int		i;
+	t_list	*node;
 
-	if (argc == 3)
+	if (argc == 2)
 	{
-		s = argv[1];
-		c = argv[2];
-		result = ft_split(s, c[0]);
-		printf("Original String: %s\n", s);
-		if (result == NULL)
-			printf("Memory allocation failed.\n");
-		i = 0;
-		while (result[i] != NULL)
+		node = ft_lstnew(argv[1]);
+		if (node == 0)
 		{
-			printf("Substring %i:%s\n", i, result[i]);
-			i++;
+			printf("Failed to create a new node.\n");
+			return (1);
 		}
-		i = 0;
-		while (result[i] != NULL)
-		{
-			free(result[i]);
-			i++;
-		}
-		free(result);
+		printf("New node created with content: %s\n", (char *)node->content);
 	}
 	else
-		printf("Usage: %s <string> <delimiter>\n", argv[0]);
+		printf("Usage: program_name <content>\n");
 	return (0);
 }

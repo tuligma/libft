@@ -5,92 +5,110 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 11:34:49 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/05 03:46:54 by npentini         ###   ########.fr       */
+/*   Created: 2023/06/08 16:50:23 by npentini          #+#    #+#             */
+/*   Updated: 2023/06/08 20:50:49 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_countw(const char *s, char c)
+static int	on(char s, char c)
 {
-	int	count;
+	if (s == c)
+		return (0);
+	else
+		return (1);
+}
+
+static int	count_word(char const *s, char c)
+{
+	int	count_word;
 	int	i;
 
-	count = 0;
+	count_word = 1;
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] != c)
+		if (on(s[i], c))
 		{
-			count++;
-			while (s[i] != '\0' && s[i] != c)
+			count_word++;
+			while (s[i] != '\0' && on(s[i], c))
 				i++;
 		}
 		else
 			i++;
 	}
-	return (count);
+	return (count_word);
 }
 
-static char	**alloc_split(char const *s, char c)
+static char	*ft_range(char const *s, size_t start, size_t end)
 {
-	char	**arr;
+	char	*dest;
+	size_t	i;
+	size_t	size;
 
-	arr = (char **)malloc(sizeof(char *) * (ft_countw(s, c) + 1));
-	if (arr == NULL)
+	size = end - start;
+	dest = (char *)malloc(sizeof(char) * (size + 1));
+	if (dest == NULL)
 		return (NULL);
-	return (arr);
-}
-
-static void	f_split(char **arr, int x)
-{
-	while (x > 0)
+	i = 0;
+	while (start < end)
 	{
-		free(arr[x]);
-		x--;
+		dest[i] = s[start];
+		i++;
+		start++;
 	}
-	free(arr);
+	dest[i] = '\0';
+	return (dest);
 }
 
-static void	set_arr(const char *s, char c, char **arr, int i)
+static char	**splitter(char **dest, char const *s, char c)
 {
-	int	x;
-	int	min;
+	size_t	i;
+	size_t	j;
+	size_t	start;
 
-	x = 0;
-	while (s[i] == c && s[i] != '\0')
-		i++;
+	i = 0;
+	j = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] != c)
-		{
-			min = i;
-			while (s[i] != '\0' && s[i] != c)
-				i++;
-			arr[x] = ft_substr(s, min, i - min);
-			if (arr[x] == NULL)
-			{
-				f_split(arr, x);
-				return ;
-			}
-			x++;
-		}
-		else
+		while (!on(s[i], c) && s[i] != '\0')
 			i++;
+		if (on(s[i], c) && s[i] != '\0')
+		{
+			start = i;
+			while (on(s[i], c) && s[i] != '\0')
+				i++;
+			dest[j] = ft_range(s, start, i);
+			if (dest[j] == NULL)
+				return (NULL);
+			j++;
+		}
 	}
-	arr[x] = NULL;
+	dest[j] = NULL;
+	return (dest);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	char	**dest;
 	char	**arr;
-	int		i;
+	int		k;
 
-	i = 0;
-	arr = alloc_split(s, c);
-	if (arr == NULL)
+	dest = (char **)malloc(sizeof(char *) * (count_word(s, c)));
+	if (dest == NULL)
 		return (NULL);
-	set_arr(s, c, arr, i);
+	arr = splitter(dest, s, c);
+	if (arr == NULL)
+	{
+		k = 0;
+		while (k < count_word(s, c))
+		{
+			free(arr[k]);
+			k++;
+		}
+		free(arr);
+		return (NULL);
+	}
 	return (arr);
 }
