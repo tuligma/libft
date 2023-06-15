@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 11:35:02 by npentini          #+#    #+#             */
-/*   Updated: 2023/05/31 11:35:10 by npentini         ###   ########.fr       */
+/*   Created: 2023/06/15 00:10:29 by npentini          #+#    #+#             */
+/*   Updated: 2023/06/15 00:35:23 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "testutils.h"
 
-int	ft_isalpha(int c)
+int	main(void)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	else
-		return (0);
+	char	*s;
+	int		i;
+	
+
+	
 }

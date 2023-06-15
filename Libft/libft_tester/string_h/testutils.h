@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen_tester.c                                 :+:      :+:    :+:   */
+/*   testutils.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 21:29:57 by npentini          #+#    #+#             */
-/*   Updated: 2023/05/26 21:43:16 by npentini         ###   ########.fr       */
+/*   Created: 2023/06/12 02:52:46 by npentini          #+#    #+#             */
+/*   Updated: 2023/06/12 06:30:27 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#ifndef TESTUTILS_H
+# define TESTUTILS_H
 
-size_t	ft_strlen(const char *s);
+# include <stdio.h>
+# include <string.h>
+# include <unistd.h>
+# include <ctype.h>
+# include <stdlib.h>
+# include "libft.h"
 
-int	main(int argc, char **argv)
-{
-	const char	*s;
-	size_t		length;
+# define BL "\e[0;30m"
+# define RE "\e[0;31m"
+# define GR "\e[0;32m"
+# define YE "\e[0;33m"
+# define BU "\e[0;34m"
+# define MA "\e[0;35m"
+# define CY "\e[0;36m"
+# define WH "\e[0;37m"
+# define CR "\e[0m"
 
-	if (argc == 2)
-	{
-		s = argv[1];
-		length = ft_strlen(s);
-		printf("Myfunc: Length of \"%s\" is %zu.\n", s, length);
-		printf("String.h: Leng of \"%s\" is %zu.\n", s, strlen(s));
-	}
-	else
-		printf("Usage: ./program \"string\"\n");
-	return (0);
-}
+#endif

@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   testutils.h                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 02:52:46 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/12 02:52:51 by npentini         ###   ########.fr       */
+/*   Created: 2023/05/31 11:35:02 by npentini          #+#    #+#             */
+/*   Updated: 2023/06/16 03:08:32 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTUTILS_H
-# define TESTUTILS_H
+#include "libft.h"
 
-# include <stdio.h>
-# include <string.h>
-# include <unistd.h>
-# include <ctype.h>
-# include <stdlib.h>
-
-# define BL "\e[0;30m"
-# define RE "\e[0;31m"
-# define GR "\e[0;32m"
-# define YE "\e[0;33m"
-# define BU "\e[0;34m"
-# define MA "\e[0;35m"
-# define CY "\e[0;36m"
-# define WH "\e[0;37m"
-# define CR "\e[0m"
-
-#endif
+int	ft_isalpha(int c)
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	else
+		return (0);
+}
