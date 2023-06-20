@@ -6,7 +6,7 @@
 #    By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/15 01:18:24 by npentini          #+#    #+#              #
-#    Updated: 2023/06/15 03:52:11 by npentini         ###   ########.fr        #
+#    Updated: 2023/06/20 09:57:45 by npentini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,12 +66,13 @@ TEST = $(TESTDIR)/ft_isalnum_tester.c \
        $(TESTDIR)/ft_isprint_tester.c \
        $(TESTDIR)/ft_tolower_tester.c \
        $(TESTDIR)/ft_toupper_tester.c \
+       $(TESTDIR)/ft_strlen_tester.c \
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I$(INCLUDES)
 
 $(MAKECMDGOALS):
-	@$(CC) $(CFLAGS) $(SRCDIR)/$(word 1, $(MAKECMDGOALS)).c $(TESTDIR)/$(word 1, $(MAKECMDGOALS))_tester.c -o $(BINDIR)/$(word 1, $(MAKECMDGOALS))
+	@$(CC) $(CFLAGS) $(SRCDIR)/$(MAKECMDGOALS).c $(TESTDIR)/$(MAKECMDGOALS)_tester.c -o $(BINDIR)/$(MAKECMDGOALS)
 	@echo "$(BINDIR)/$(word 1, $(MAKECMDGOALS))"
 clean:
 	rm -f $(BINDIR)/*

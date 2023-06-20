@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 01:24:05 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/02 01:25:19 by npentini         ###   ########.fr       */
+/*   Updated: 2023/06/19 22:46:47 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && 'Z' >= c)
-	{
 		c += 32;
-		return (c);
-	}
-	else
-		return (c);
+	return (c);
 }

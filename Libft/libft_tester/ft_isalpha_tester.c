@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 17:22:43 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/16 02:44:36 by npentini         ###   ########.fr       */
+/*   Created: 2023/06/16 19:48:04 by npentini          #+#    #+#             */
+/*   Updated: 2023/06/16 19:50:02 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ int	main(int argc, char **argv)
 		{
 			printf("\n\n\n\n\n\n\n\n\n\n\n");
 			printf("\n\t\t\t\t\t%sError:%s\n", RE, CR);
-			printf("\t\t\t\t\t%sThe return value of %sft_isalpha%s is <%szero%s>.%s\n",
-				RE, YE, RE, YE, RE, CR);
-			printf("\t\t\t\t\t%swhile the %sexpected return value%s is <%snon-zero%s>.%s\n",
-				RE, GR, RE, GR, RE, CR);
+			printf("\t\t\t\t\t%sThe return value of", RE);
+			printf("%sft_isalpha%s is <%szero%s>.%s\n", YE, RE, YE, RE, CR);
+			printf("\t\t\t\t\t%swhile the %sexpected return value", RE, GR);
+			printf("%s is<%snon-zero%s>.%s\n", RE, GR, RE, CR);
 			printf("\n\n\n\n\n\n\n\n\n\n\n");
 		}
 		else
 		{
-			printf("\n\n\n\n\n\n\n");
+			printf("\n\n\n\n\n");
 			printf("\t\t\t\t\t=================================\n");
 			printf("\t\t\t\t\t|%s	Comparison Results	%s|\n", BU, CR);
 			printf("\t\t\t\t\t=================================\n");
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 				printf("\t\t\t\t\t|               |               |\n");
 				printf("\t\t\t\t\t=================================\n");
 				printf("\n");
-				printf("%s \t\t\t\t\t\"%c\"%s %sis an alphanumeric character.%s\n",
+				printf("%s \t\t\t\t\t\"%c\"%s %sis an alphabet character.%s\n",
 					YE, c, CR, GR, CR);
 			}
 			else
@@ -68,10 +68,25 @@ int	main(int argc, char **argv)
 				printf("\t\t\t\t\t|               |               |\n");
 				printf("\t\t\t\t\t=================================\n");
 				printf("\n");
-				printf("%s \t\t\t\t\t\"%c\"%s %sis not an alphanumeric character!%s\n",
+				printf("%s \t\t\t\t\t\"%c\"%s %sis not an alphabet character!%s\n",
 					YE, c, CR, RE, CR);
 			}
-			printf("\n\n\n\n\n\n\n");
+			printf("\n\n\n");
+			printf("%sisalpha():\n", GR);
+			printf("\t%sDescription:\n", BU);
+			printf("\t%schecks for an alphabetic character; ", YE);
+			printf("in the standard \"C\" locale, it is equivalent ");
+			printf("to (%sissupper(c) %s\n\t||%s islower(c)%s). ",
+				GR, YE, GR, YE);
+			printf("In some locales, there may be additional characters ");
+			printf("for which %sisalpha()%s is true-letters\n", GR, YE);
+			printf("\twhich are neither uppercase nor lowercase.\n\n");
+			printf("\t%sReturn Value:\n", BU);
+			printf("\t%sThe values returned are <%snon-zero%s> if the ",
+				YE, GR, YE);
+			printf("character %sc%s falls into the tested class, ", GR, YE);
+			printf("and <%szero%s> if not.", GR, YE);
+			printf("\n\n");
 		}
 	}
 	else
