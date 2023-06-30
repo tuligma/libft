@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 02:52:46 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/30 14:18:52 by npentini         ###   ########.fr       */
+/*   Updated: 2023/06/30 17:04:55 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,49 @@ void					display_test_info(const t_function_info *info);
 void					display_error_info(const t_function_info *info);
 void					ft_isalnum_test(int cols,
 							int rows, int argc, char **argv);
+void					ft_isalpha_test(int cols,
+							int rows, int argc, char **argv);
 void					ft_isascii_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_isdigit_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_isprint_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_tolower_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_toupper_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_strlen_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_memset_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_memcpy_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_bzero_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_memmove_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_strlcpy_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_strlcat_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_strchr_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_strrchr_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_strncmp_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_memchr_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_memcmp_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_strnstr_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_strdup_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_atoi_test(int cols,
+							int rows, int argc, char **argv);
+void					ft_calloc_test(int cols,
 							int rows, int argc, char **argv);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/15 01:18:24 by npentini          #+#    #+#              #
-#    Updated: 2023/06/20 09:57:45 by npentini         ###   ########.fr        #
+#    Updated: 2023/06/24 22:53:27 by npentini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,8 +67,9 @@ TEST = $(TESTDIR)/ft_isalnum_tester.c \
        $(TESTDIR)/ft_tolower_tester.c \
        $(TESTDIR)/ft_toupper_tester.c \
        $(TESTDIR)/ft_strlen_tester.c \
+       $(TESTDIR)/ft_memset_tester.c \
 
-CC = cc
+CC = cc -g
 CFLAGS = -Wall -Wextra -Werror -I$(INCLUDES)
 
 $(MAKECMDGOALS):
