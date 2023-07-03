@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha_test.c                                  :+:      :+:    :+:   */
+/*   ft_toupper_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/30 16:45:28 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/30 18:18:58 by npentini         ###   ########.fr       */
+/*   Created: 2023/07/01 22:27:57 by npentini          #+#    #+#             */
+/*   Updated: 2023/07/01 22:56:18 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testutils.h"
 
-void	ft_isalpha_test(int cols, int rows, int argc, char **argv)
+void	ft_toupper_test(int cols, int rows, int argc, char **argv)
 {
 	const t_function_info	*info;
 	char					*result;
@@ -35,7 +35,7 @@ void	ft_isalpha_test(int cols, int rows, int argc, char **argv)
 		c = argv[1][0];
 	else
 		c = argv[1][0];
-	if ((ft_isalpha(c) && isalpha(c)) || (!ft_isalpha(c) && !isalpha(c)))
+	if ((ft_toupper(c) && toupper(c)) || (!ft_toupper(c) && !toupper(c)))
 		result = "\e[1;92mOK\e[0m";
 	else
 		result = "\e[1;91mKO\e[0m";
@@ -51,28 +51,30 @@ void	ft_isalpha_test(int cols, int rows, int argc, char **argv)
 				rows - (rows - (x += 2)), "\t\t \"%s%c%s\"", BHYE, c, CR);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
 			rows - (rows - (x += 2)),
-			"\t\t ft_isalpha : [%d] -> [%s]", ft_isalpha(c), result);
+			"\t\t ft_toupper : [%c] -> [%s]", ft_toupper(c), result);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
-			rows - (rows - (x += 2)), "\t\t isalpha    : [%d]", isalpha(c));
-		if ((ft_isalpha(c) && isalpha(c)) || (!ft_isalpha(c) && !isalpha(c))
+			rows - (rows - (x += 2)), "\t\t toupper    : [%c]", toupper(c));
+		if ((ft_toupper(c) && toupper(c)) || (!ft_toupper(c) && !toupper(c))
 			|| (c < 0))
 		{
-			if (ft_isalpha(c))
+			if (ft_toupper(c) && islower(c))
 			{
 				move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
 					rows - (rows - (x += 2)), "\t\t %s\"%s%c%s\":"
-					" is an alphabet character.%s", IGR, BHYE, c, IGR, CR);
+					" is converted to UPPERCASE.%s",
+					IGR, BHYE, ft_toupper(c), IGR, CR);
 			}
 			else
 			{
 				if (c >= '\t' && c <= '\r')
 					move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
 						rows - (rows - (x += 2)), "\t\t %s\"%s\\t - \\r%s\":"
-						" is not an alphabet character.%s", IRE, BHYE, IRE, CR);
+						" returned without any conversion.%s",
+						IRE, BHYE, IRE, CR);
 				else
 					move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
 						rows - (rows - (x += 2)), "\t\t %s\"%s%c%s\":"
-						" is not an alphabet character.%s",
+						" returned without any conversion.%s",
 						IRE, BHYE, c, IRE, CR);
 			}
 		}

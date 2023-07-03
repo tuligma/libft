@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 02:53:00 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/30 17:42:38 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/02 21:54:07 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ const	t_function_info	*get_function_info(const char *func_name)
 		.usage = " ./ft_isdigit <character>\n\t\t\t\t\t\t"
 		" ./ft_isdigit 128",
 		.recom = " (a - z), (A - Z), (0 - 9),"
-		" !@#$%^&*()_+\\{}\":;\n\t\t\t\t\t\t"
-		"try decimal value of ASCII"
+		" !@#$%^&*()_+\\{}\":;\n\t\t\t\t\t\t "
+		" try decimal value of ASCII"
 	};
 	static const t_function_info	ft_isprint_info = {
 		.name = "ft_isprint()",
@@ -87,8 +87,8 @@ const	t_function_info	*get_function_info(const char *func_name)
 		.usage = " ./ft_isprint <character>\n\t\t\t\t\t\t"
 		" ./ft_isprint 128",
 		.recom = " (a - z), (A - Z), (0 - 9),"
-		" !@#$%^&*()_+\\{}\":;\n\t\t\t\t\t\t"
-		"try decimal value of ASCII"
+		" !@#$%^&*()_+\\{}\":;\n\t\t\t\t\t\t "
+		" try decimal value of ASCII"
 	};
 	static const t_function_info	ft_tolower_info = {
 		.name = "ft_tolower()",
@@ -103,8 +103,8 @@ const	t_function_info	*get_function_info(const char *func_name)
 		.usage = " ./ft_tolower <character>\n\t\t\t\t\t\t"
 		" ./ft_tolower 128",
 		.recom = " (a - z), (A - Z), (0 - 9),"
-		" !@#$%^&*()_+\\{}\":;\n\t\t\t\t\t\t"
-		"try decimal value of ASCII"
+		" !@#$%^&*()_+\\{}\":;\n\t\t\t\t\t\t "
+		" try decimal value of ASCII"
 	};
 	static const t_function_info	ft_toupper_info = {
 		.name = "ft_toupper()",
@@ -115,12 +115,12 @@ const	t_function_info	*get_function_info(const char *func_name)
 		" representation of the character if it is a\n\t\t\t\t\t"
 		" lowercase letter, otherwise returns the character itself.",
 		.arguments = "2",
-		.error = "arguments should be 2",
+		.error = "arguments should be 2 or invalid input",
 		.usage = " ./ft_toupper <character>\n\t\t\t\t\t\t"
 		" ./ft_toupper 128",
 		.recom = " (a - z), (A - Z), (0 - 9),"
-		" !@#$%^&*()_+\\{}\":;\n\t\t\t\t\t\t"
-		"try decimal value of ASCII"
+		" !@#$%^&*()_+\\{}\":;\n\t\t\t\t\t\t "
+		" try decimal value of ASCII"
 	};
 	static const t_function_info	ft_strlen_info = {
 		.name = "ft_strlen()",
@@ -128,11 +128,12 @@ const	t_function_info	*get_function_info(const char *func_name)
 		.description = "Calculates the length of the null-terminated string s.",
 		.return_value = "Returns the number of characters in the string.",
 		.arguments = "2",
-		.usage = " ./ft_toupper <string>\n\t\t\t\t\t\t"
-		" ./ft_toupper \"Hello, World!\"",
-		.recom = " \"\" \'\0\', ""a - z, A - Z, ""\"Hello\", \"42abudhabi\""
-		" \n\t\t\t\t\t\t \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. \""
-		" \n\t\t\t\t\t\t \"Lorem ipsum dolor sit\0amet, consectetur adipiscing elit. \""
+		.error = "arguments should be 2 or invalid input",
+		.usage = " ./ft_strlen <string>\n\t\t\t\t\t\t"
+		" ./ft_strlen \"Hello, World!\"",
+		.recom = " \"\", \'\\0\', ""a - z, A - Z, ""\"Hello\", \"42abudhabi\""
+		" \n\t\t\t\t\t\t  \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. \""
+		" \n\t\t\t\t\t\t  \"Lorem ipsum dolor sit\\0amet, consectetur adipiscing elit. \""
 	};
 	static const t_function_info	ft_memset_info = {
 		.name = "ft_memset()",
@@ -140,7 +141,11 @@ const	t_function_info	*get_function_info(const char *func_name)
 		.description = "Fills the first n bytes"
 		" of the memory area pointed to by\n\t\t\t\t\t"
 		" s with the constant byte c.",
-		.return_value = "Returns a pointer to the memory area s."
+		.return_value = "Returns a pointer to the memory area s.",
+		.arguments = "4",
+		.usage = " ./ft_memset <string> <character> <size>\n\t\t\t\t\t\t"
+		" ./ft_memset \"Hello, World!\" \"x\" \'5\'",
+		.recom = " \"\" "
 	};
 	static const t_function_info	ft_memcpy_info = {
 		.name = "ft_memcpy()",

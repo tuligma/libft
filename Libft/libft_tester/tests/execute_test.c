@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:49:01 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/30 17:05:48 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/02 21:54:36 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,13 @@ void	execute_test(const char *test, int argc, char **argv)
 	{"ft_isalnum", ft_isalnum_test},
 	{"ft_isalpha", ft_isalpha_test},
 	{"ft_isascii", ft_isascii_test},
-	/*{"ft_isdigit", ft_isdigit_test},
-	{"ft_isprint", ft_isprint_test},
+	{"ft_isdigit", ft_isdigit_test},
 	{"ft_isprint", ft_isprint_test},
 	{"ft_tolower", ft_tolower_test},
 	{"ft_toupper", ft_toupper_test},
 	{"ft_strlen", ft_strlen_test},
 	{"ft_memset", ft_memset_test},
-	{"ft_memcpy", ft_memcpy_test},
+	/*{"ft_memcpy", ft_memcpy_test},
 	{"ft_bzero", ft_bzero_test},
 	{"ft_memmove", ft_memmove_test},
 	{"ft_strlcpy", ft_strlcpy_test},
