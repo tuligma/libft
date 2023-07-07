@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset_test.c                                   :+:      :+:    :+:   */
+/*   ft_memmove_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 22:27:57 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/04 23:15:09 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/06 14:26:17 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testutils.h"
 
-void	ft_memset_test(int cols, int rows, int argc, char **argv)
+void	ft_memmove_test(int cols, int rows, int argc, char **argv)
 {
 	const t_function_info	*info;
 	char					*result;
-	char					*s;
-	char					*sdup;
+	char					*src;
+	char					*dest1;
+	char					*dest2;
 	int						x;
-	int						c;
 	int						p;
+	int						p1;
 	size_t					n;
 
 	info = get_function_info(argv[0]);
@@ -30,59 +31,54 @@ void	ft_memset_test(int cols, int rows, int argc, char **argv)
 		display_error_info(info);
 		return ;
 	}
-	else if (argv[1] == NULL || atoi(argv[3]) > strlen(argv[1]))
-	{
-		display_error_info(info);
-		return ;
-	}
 	x = 11;
-	p = position(argv[1]);
-	sdup = strdup(argv[1]);
-	s = strdup(str_checker(sdup));
-	c = argv[2][0];
+	p = position(argv[2]);
+	p1 = position(argv[1]);
+	src = str_checker(argv[2]);
+	dest1 = strdup(src);
+	dest2 = strdup(src);
 	n = atoi(argv[3]);
-	if ((ft_memset(&s[p], c, n) && memset(&s[p], c, n)))
+	ft_memmove(&dest1[p1], &src[p], n);
+	memmove(&dest2[p1], &src[p], n);
+	if (memcmp(dest1, dest2, n) == 0)
 		result = "\e[1;92mOK\e[0m";
 	else
 		result = "\e[1;91mKO\e[0m";
-	reset_dup(&s, sdup);
+	strcpy(dest1, src);
+	strcpy(dest2, src);
 	if (argc == atoi(info->arguments))
 	{
 		display_test_info(info);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
-			rows - (rows - (x += 3)), "\t\t \"%s[%s, %c, %zu]%s\" <- [%s%p%s]",
-			BHYE, s, c, n, CR, BHGR, &argv[1], CR);
-		ft_memset(&s[p], c, n);
+			rows - (rows - (x += 3)), "\t\t \"%s[%s, %s, %zu]%s\" <- [%s%p%s]",
+			BHYE, argv[1], src, n, CR, IGR, &argv[2], CR);
+		ft_memmove(&dest1[p1], &src[p], n);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
 			rows - (rows - (x += 2)),
-			"\t\t ft_memset : [%s] -> [%s]", s, result);
-		reset_dup(&s, sdup);
-		memset(&s[p], c, n);
+			"\t\t ft_memmove : [%s] -> [%s]", dest1, result);
+		memmove(&dest2[p1], &src[p], n);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
-			rows - (rows - (x += 2)), "\t\t memset    : [%s]", s);
-		reset_dup(&s, sdup);
-		if ((ft_memset(&s[p], c, n) && memset(&s[p], c, n)))
+			rows - (rows - (x += 2)), "\t\t bzero      : [%s]", dest2);
+		if (memcmp(dest1, dest2, n) == 0)
 		{
-			reset_dup(&s, sdup);
-			if (n <= strlen(s) && p <= strlen(s) && n <= (strlen(s) - p))
+			if (p + n <= strlen(src) + 1 && p <= strlen(src) + 1)
 			{
-				ft_memset(&s[p], c, n);
 				move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
-					rows - (rows - (x += 2)), "\t\t %s\"%s%s -> %s\"%s:"
-					" returned as expected.%s",
-					IGR, BHYE, sdup, s, IGR, CR);
+					rows - (rows - (x += 2)), "\t\t %s\"%s%s\" -> %s\"%s:"
+					" returned as expected.%s\n\t\t\t\t\t",
+					IGR, BHYE, src, dest1, IGR, CR);
 			}
 			else
 			{
-				ft_memset(&s[p], c, n);
 				move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
-					rows - (rows - (x += 2)), "\t\t %s\"%s%s -> %s\":%s"
+					rows - (rows - (x += 2)), "\t\t %s\"%s%s\" -> %s\":%s"
 					" undefined behavior!!!"
 					" \n\t\t\t\t\t%s -if the size is morethan"
-					" the length of the string"
-					" \n\t\t\t\t\t  *(with or without pointer arithmetic).%s",
-					IRE, BHYE, sdup, s, IRE, YE, CR);
-				x += 2;
+					" the length of the string."
+					" \n\t\t\t\t\t  *(with or without pointer arithmetic)."
+					" \n\t\t\t\t\t  *(buffer overflow).%s \n\t\t\t\t\t\t\t ",
+					IRE, BHYE, src, dest1, IRE, YE, CR);
+				x += 3;
 			}
 		}
 		else
@@ -92,8 +88,8 @@ void	ft_memset_test(int cols, int rows, int argc, char **argv)
 				" wrong with your %s implementation!!%s\"",
 				IRE, argv[0] + 2, CR);
 		}
-		free(sdup);
-		free(s);
+		free(dest1);
+		free(dest2);
 	}
 	while (rows-- - x)
 		printf("\n");

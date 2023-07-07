@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 02:53:00 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/02 21:54:07 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/06 14:54:11 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,16 +143,23 @@ const	t_function_info	*get_function_info(const char *func_name)
 		" s with the constant byte c.",
 		.return_value = "Returns a pointer to the memory area s.",
 		.arguments = "4",
+		.error = "invalid input!!!",
 		.usage = " ./ft_memset <string> <character> <size>\n\t\t\t\t\t\t"
 		" ./ft_memset \"Hello, World!\" \"x\" \'5\'",
-		.recom = " \"\" "
+		.recom = " \"\", \"Hello world! + 3\" \"x\" \'2\',"
+		" \"Hello\" \"0\" \'8\'"
 	};
 	static const t_function_info	ft_memcpy_info = {
 		.name = "ft_memcpy()",
 		.prototype = "void *memcpy(void *dest, const void *src, size_t n);",
 		.description = "Copies n bytes from the memory"
 		" area src to the memory area dest.",
-		.return_value = "Returns a pointer to dest."
+		.return_value = "Returns a pointer to dest.",
+		.arguments = "4",
+		.error = "Invalid input!!!",
+		.usage = " ./ft_memcpy <destination-size> <string> <size>\n\t\t\t\t\t\t"
+		" ./ft_memcpy \"13\" \"Hello world!\" \'6\'",
+		.recom = "\"\", \"5\" \"Hello\" '3', \'12\' \"Hello world! + 7\" \'5\'"
 	};
 	static const t_function_info	ft_bzero_info = {
 		.name = "ft_bzero()",
@@ -161,7 +168,12 @@ const	t_function_info	*get_function_info(const char *func_name)
 		" data in the n bytes of the\n\t\t\t\t\t"
 		" memory starting at the location pointed to by s,"
 		" by\n\t\t\t\t\t writing zeros (bytes containing \'\\0\') to that area.",
-		.return_value = "None"
+		.return_value = "None",
+		.arguments = "3",
+		.error = "Invalid input!!!",
+		.usage = " ./ft_bzero <string> <size> \n\t\t\t\t\t\t"
+		" ./ft_bzero \"Hello + 2\" \'3\'",
+		.recom = " \"\", \"Hello + 3\"  \'2\', \"Hello\" \'6\'"
 	};
 	static const t_function_info	ft_memmove_info = {
 		.name = "ft_memmove()",
@@ -169,7 +181,12 @@ const	t_function_info	*get_function_info(const char *func_name)
 		.description = "Copies n bytes from the memory area"
 		" src to the memory area dest,\n\t\t\t\t\t"
 		" handling overlapping memory regions correctly.",
-		.return_value = "Returns a pointer to dest."
+		.return_value = "Returns a pointer to dest.",
+		.arguments = "4",
+		.error = "Invalid input!!!",
+		.usage = " ./ft_memmove <position> <string> <size> \n\t\t\t\t\t\t"
+		" ./ft_memmove \"+7\" \"Hello, world!\" \'6\'",
+		.recom = " \"\", \"+3 \" \"012345\" \'3\', \"\" \"123abc + 3\" \'3\'"
 	};
 	static const t_function_info	ft_strlcpy_info = {
 		.name = "ft_strlcpy()",
@@ -178,7 +195,12 @@ const	t_function_info	*get_function_info(const char *func_name)
 		.description = "Copies up to size - 1 characters"
 		" from the string src to dest,\n\t\t\t\t\t"
 		" ensuring null-termination of the result.",
-		.return_value = "Returns the total length of src."
+		.return_value = "Returns the total length of src.",
+		.arguments = "4",
+		.error = "Invalid input!!!",
+		.usage = " ./ft_memmove <dest_size> <string> <size> \n\t\t\t\t\t\t"
+		" ./ft_memmove \"12\" \"Hello, world!\" \'12\'",
+		.recom = "\"\", \"10\" \"Hello, world! + 7\" \'6\', \"0\" \"Hello\" \'4\'"
 	};
 	static const t_function_info	ft_strlcat_info = {
 		.name = "ft_strlcat()",

@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 00:08:39 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/30 03:27:00 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/04 23:14:30 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include <stdarg.h>
 # include <stddef.h>
 
+char	*reset_dup(char **s, char *sdup);
+char	*str_checker(char *str);
+char	position(char *str);
 void	move_cursor(int x, int y);
 void	clear_screen(void);
 void	term_size(int *cols, int *rows);

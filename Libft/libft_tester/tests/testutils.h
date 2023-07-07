@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 02:52:46 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/30 17:04:55 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/04 23:25:15 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 # define L_RECOM "Input recommendation:\t "
 
 const t_function_info	*get_function_info(const char *func_name);
+
 void					execute_test(const char *test, int argc, char **argv);
 void					display_test_info(const t_function_info *info);
 void					display_error_info(const t_function_info *info);

@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:49:01 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/02 21:54:36 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/06 14:54:32 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	execute_test(const char *test, int argc, char **argv)
 	{"ft_toupper", ft_toupper_test},
 	{"ft_strlen", ft_strlen_test},
 	{"ft_memset", ft_memset_test},
-	/*{"ft_memcpy", ft_memcpy_test},
+	{"ft_memcpy", ft_memcpy_test},
 	{"ft_bzero", ft_bzero_test},
 	{"ft_memmove", ft_memmove_test},
 	{"ft_strlcpy", ft_strlcpy_test},
-	{"ft_strlcat", ft_strlcat_test},
+	/*{"ft_strlcat", ft_strlcat_test},
 	{"ft_strchr", ft_strchr_test},
 	{"ft_strrchr", ft_strrchr_test},
 	{"ft_strncmp", ft_strncmp_test},
