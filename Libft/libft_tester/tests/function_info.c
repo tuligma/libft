@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 02:53:00 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/06 14:54:11 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/07 18:19:15 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,9 +193,9 @@ const	t_function_info	*get_function_info(const char *func_name)
 		.prototype = "size_t ft_strlcpy(char *dest, const char"
 		" *src, size_t size);",
 		.description = "Copies up to size - 1 characters"
-		" from the string src to dest,\n\t\t\t\t\t"
+		" from the string src to dest,\n\t\t\t\t\t\t"
 		" ensuring null-termination of the result.",
-		.return_value = "Returns the total length of src.",
+		.return_value = "\t Returns the total length of src.",
 		.arguments = "4",
 		.error = "Invalid input!!!",
 		.usage = " ./ft_memmove <dest_size> <string> <size> \n\t\t\t\t\t\t"

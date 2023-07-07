@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove_test.c                                  :+:      :+:    :+:   */
+/*   ft_strlcpy_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 22:27:57 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/07 12:45:35 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/07 18:32:08 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testutils.h"
 
-void	ft_memmove_test(int cols, int rows, int argc, char **argv)
+void	ft_strlcpy_test(int cols, int rows, int argc, char **argv)
 {
 	const t_function_info	*info;
 	char					*result;
@@ -21,8 +21,7 @@ void	ft_memmove_test(int cols, int rows, int argc, char **argv)
 	char					*dest2;
 	int						x;
 	int						p;
-	int						p1;
-	size_t					n;
+	size_t					size;
 
 	info = get_function_info(argv[0]);
 	if (argc != atoi(info->arguments)
@@ -33,41 +32,41 @@ void	ft_memmove_test(int cols, int rows, int argc, char **argv)
 	}
 	x = 11;
 	p = position(argv[2]);
-	p1 = position(argv[1]);
 	src = str_checker(argv[2]);
-	dest1 = strdup(src);
-	dest2 = strdup(src);
-	n = atoi(argv[3]);
-	ft_memmove(&dest1[p1], &src[p], n);
-	memmove(&dest2[p1], &src[p], n);
-	if (memcmp(dest1, dest2, n) == 0)
+	dest1 = malloc(sizeof(char *) * atoi(argv[1]));
+	dest2 = malloc(sizeof(char *) * atoi(argv[1]));
+	if (dest1 == NULL || dest2 == NULL)
+		return ;
+	size = atoi(argv[3]);
+	if (ft_strlcpy(dest1, &src[p], size) == strlcpy(dest2, &src[p], size))
 		result = "\e[1;92mOK\e[0m";
 	else
 		result = "\e[1;91mKO\e[0m";
-	strcpy(dest1, src);
-	strcpy(dest2, src);
+	bzero(dest1, strlen(dest1));
+	bzero(dest2, strlen(dest1));
 	if (argc == atoi(info->arguments))
 	{
 		display_test_info(info);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
 			rows - (rows - (x += 3)), "\t\t \"%s[%s, %s, %zu]%s\" <- [%s%p%s]",
-			BHYE, argv[1], src, n, CR, IGR, &argv[2], CR);
-		ft_memmove(&dest1[p1], &src[p], n);
+			BHYE, argv[1], src, size, CR, IGR, &argv[2], CR);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
 			rows - (rows - (x += 2)),
-			"\t\t ft_memmove : [%s] -> [%s]", dest1, result);
-		memmove(&dest2[p1], &src[p], n);
+			"\t\t ft_strlcpy : [%zu]-[%s] -> [%s]",
+			ft_strlcpy(dest1, &src[p], size), dest1, result);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
-			rows - (rows - (x += 2)), "\t\t bzero      : [%s]", dest2);
-		if (memcmp(dest1, dest2, n) == 0)
+			rows - (rows - (x += 2)), "\t\t strlcpy    : [%zu]-[%s]",
+			strlcpy(dest2, &src[p], size), dest2);
+		if (memcmp(dest1, dest2, size) == 0)
 		{
-			if (p + n <= strlen(src) + 1 && p <= strlen(src) + 1
-					&& p1 + n <= strlen(src) + 1 && p1 <= strlen(src) + 1)
+			if (p + size <= strlen(src) + 1 && p <= strlen(src) + 1)
 			{
 				move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
-					rows - (rows - (x += 2)), "\t\t %s\"%s%s\" -> %s\"%s:"
+					rows - (rows - (x += 2)), "\t\t %s\"%s%s\" -> %s-[%zu]%s:"
 					" returned as expected.%s\n\t\t\t\t\t",
-					IGR, BHYE, src, dest1, IGR, CR);
+					IGR, BHYE, src, dest1,
+					ft_strlcpy(dest1, &src[p], size), IGR, CR);
+				x += 1;
 			}
 			else
 			{
@@ -79,7 +78,7 @@ void	ft_memmove_test(int cols, int rows, int argc, char **argv)
 					" \n\t\t\t\t\t  *(with or without pointer arithmetic)."
 					" \n\t\t\t\t\t  *(buffer overflow).%s \n\t\t\t\t\t\t\t ",
 					IRE, BHYE, src, dest1, IRE, YE, CR);
-				x += 3;
+				x += 4;
 			}
 		}
 		else
