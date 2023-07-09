@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 16:45:28 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/30 18:18:58 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/07 21:53:44 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_isalpha_test(int cols, int rows, int argc, char **argv)
 	x = 12;
 	if (strlen(argv[1]) == 1)
 		c = argv[1][0];
-	else if (strlen(argv[1]) > 1 && isdigit(argv[1][0]) || atoi(argv[1]) < 0)
+	else if (strlen(argv[1]) > 1 && (isdigit(argv[1][0]) || atoi(argv[1]) < 0))
 		c = atoi(argv[1]);
 	else if (strlen(argv[1]) > 1 && isalpha(argv[1][1]))
 		c = argv[1][0];

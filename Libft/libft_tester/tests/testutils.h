@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 02:52:46 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/04 23:25:15 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/07 22:26:17 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <ctype.h>
 # include <stdlib.h>
 # include <stdbool.h>
+# include <bsd/string.h>
 
 # include "mycolors.h"
 # include "myformatter.h"

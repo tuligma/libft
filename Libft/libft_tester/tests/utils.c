@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 05:56:15 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/05 01:56:40 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/07 21:49:25 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,8 @@ char	*reset_dup(char **s, char *sdup)
 char	*str_checker(char *str)
 {
 	int	i;
-	int	plus_index;
 
 	i = 0;
-	plus_index = -1;
 	while (str[i] != '\0')
 	{
 		if ((str[i + 1] == ' ' && str[i + 2] == '+')

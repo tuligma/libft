@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 02:53:00 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/07 18:19:15 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/08 01:10:10 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,11 +195,11 @@ const	t_function_info	*get_function_info(const char *func_name)
 		.description = "Copies up to size - 1 characters"
 		" from the string src to dest,\n\t\t\t\t\t\t"
 		" ensuring null-termination of the result.",
-		.return_value = "\t Returns the total length of src.",
+		.return_value = " Returns the total length of src.",
 		.arguments = "4",
 		.error = "Invalid input!!!",
-		.usage = " ./ft_memmove <dest_size> <string> <size> \n\t\t\t\t\t\t"
-		" ./ft_memmove \"12\" \"Hello, world!\" \'12\'",
+		.usage = " ./ft_strlcpy <dest_size> <string> <size> \n\t\t\t\t\t\t"
+		" ./ft_strlcpy \"12\" \"Hello, world!\" \'12\'",
 		.recom = "\"\", \"10\" \"Hello, world! + 7\" \'6\', \"0\" \"Hello\" \'4\'"
 	};
 	static const t_function_info	ft_strlcat_info = {
@@ -209,7 +209,10 @@ const	t_function_info	*get_function_info(const char *func_name)
 		.description = "Appends the string src to the end of dest,"
 		" ensuring null-termination\n\t\t\t\t\t"
 		" and limiting the total length to size - 1 characters.",
-		.return_value = "Returns the total length of the concatenated strings."
+		.return_value = "Returns the total length of the concatenated strings.",
+		.arguments = "5",
+		.error = "Invalid input!!!",
+		.usage = " ./ft_strlcat <"
 	};
 	static const t_function_info	ft_strchr_info = {
 		.name = "ft_strchr()",

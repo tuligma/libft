@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 22:27:57 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/07 12:45:35 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/07 22:03:32 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_memmove_test(int cols, int rows, int argc, char **argv)
 	char					*dest1;
 	char					*dest2;
 	int						x;
-	int						p;
-	int						p1;
+	size_t					p;
+	size_t					p1;
 	size_t					n;
 
 	info = get_function_info(argv[0]);

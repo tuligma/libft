@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:49:01 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/07 18:16:06 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/07 21:48:25 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	execute_test(const char *test, int argc, char **argv)
 	bool	test_found;
 	int		cols;
 	int		rows;
-	int		i;
+	long unsigned int		i;
 	static const t_test_entry	tests[] = {
 	{"ft_isalnum", ft_isalnum_test},
 	{"ft_isalpha", ft_isalpha_test},

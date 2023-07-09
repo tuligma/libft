@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 22:27:57 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/04 23:15:09 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/07 22:22:25 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_memset_test(int cols, int rows, int argc, char **argv)
 	char					*sdup;
 	int						x;
 	int						c;
-	int						p;
+	size_t					p;
 	size_t					n;
 
 	info = get_function_info(argv[0]);
@@ -30,7 +30,7 @@ void	ft_memset_test(int cols, int rows, int argc, char **argv)
 		display_error_info(info);
 		return ;
 	}
-	else if (argv[1] == NULL || atoi(argv[3]) > strlen(argv[1]))
+	else if (argv[1] == NULL || (size_t)atoi(argv[3]) > strlen(argv[1]))
 	{
 		display_error_info(info);
 		return ;

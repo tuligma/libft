@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 22:27:57 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/05 02:23:43 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/07 22:02:11 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ void	ft_memcpy_test(int cols, int rows, int argc, char **argv)
 	const t_function_info	*info;
 	char					*result;
 	char					*src;
-	int						dest_size;
+	size_t					dest_size;
 	int						x;
-	int						c;
-	int						p;
+	size_t					p;
 	size_t					n;
 
 	info = get_function_info(argv[0]);
@@ -30,7 +29,7 @@ void	ft_memcpy_test(int cols, int rows, int argc, char **argv)
 		display_error_info(info);
 		return ;
 	}
-	else if (argv[1] == NULL || atoi(argv[3]) > strlen(argv[2]))
+	else if (argv[1] == NULL || (size_t)atoi(argv[3]) > strlen(argv[2]))
 	{
 		display_error_info(info);
 		return ;

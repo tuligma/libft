@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 22:27:57 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/05 04:41:11 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/07 21:52:08 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_bzero_test(int cols, int rows, int argc, char **argv)
 	char					*s1;
 	char					*s2;
 	int						x;
-	int						p;
+	size_t					p;
 	size_t					n;
 
 	info = get_function_info(argv[0]);
