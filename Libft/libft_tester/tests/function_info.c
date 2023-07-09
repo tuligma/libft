@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 02:53:00 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/08 01:10:10 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/09 18:09:42 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,7 +212,8 @@ const	t_function_info	*get_function_info(const char *func_name)
 		.return_value = "Returns the total length of the concatenated strings.",
 		.arguments = "5",
 		.error = "Invalid input!!!",
-		.usage = " ./ft_strlcat <"
+		.usage = " ./ft_strlcat <dest_size> <dest_string> <src_string> <size>" 
+		"\n\t\t\t\t\t\t .ft_strlcat 20 \"Hello \" \"world!\" 6"	
 	};
 	static const t_function_info	ft_strchr_info = {
 		.name = "ft_strchr()",

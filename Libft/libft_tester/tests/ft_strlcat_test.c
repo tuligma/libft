@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy_test.c                                  :+:      :+:    :+:   */
+/*   ft_strlcat_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/01 22:27:57 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/09 18:01:30 by npentini         ###   ########.fr       */
+/*   Created: 2023/07/09 18:02:54 by npentini          #+#    #+#             */
+/*   Updated: 2023/07/09 18:52:55 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testutils.h"
-//#include <bsd/string.h>
+#include <string.h>
 
-void	ft_strlcpy_test(int cols, int rows, int argc, char **argv)
+void	ft_strlcat_test(int cols, int rows, int argc, char **argv)
 {
 	const t_function_info	*info;
 	char					*result;
@@ -32,32 +32,34 @@ void	ft_strlcpy_test(int cols, int rows, int argc, char **argv)
 		return ;
 	}
 	x = 11;
-	p = position(argv[2]);
-	src = str_checker(argv[2]);
+	p = position(argv[3]);
+	src = str_checker(argv[3]);
 	dest1 = malloc(sizeof(char *) * atoi(argv[1]));
 	dest2 = malloc(sizeof(char *) * atoi(argv[1]));
 	if (dest1 == NULL || dest2 == NULL)
 		return ;
-	size = atoi(argv[3]);
-	if (ft_strlcpy(dest1, &src[p], size) == strlcpy(dest2, &src[p], size))
+	size = atoi(argv[4]);
+	strcpy(dest1, argv[2]);
+	strcpy(dest2, argv[2]);
+	if (ft_strlcat(dest1, &src[p], size) == strlcat(dest2, &src[p], size))
 		result = "\e[1;92mOK\e[0m";
 	else
 		result = "\e[1;91mKO\e[0m";
-	bzero(dest1, strlen(dest1));
-	bzero(dest2, strlen(dest1));
+	strcpy(dest1, argv[2]);
+	strcpy(dest2, argv[2]);
 	if (argc == atoi(info->arguments))
 	{
 		display_test_info(info);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
 			rows - (rows - (x += 3)), "\t\t \"%s[%s, %s, %zu]%s\" <- [%s%p%s]",
-			BHYE, argv[1], src, size, CR, IGR, &argv[2], CR);
+			BHYE, argv[1], argv[2], src, size, CR, IGR, &argv[2], CR);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
 			rows - (rows - (x += 2)),
-			"\t\t ft_strlcpy : [%zu]-[%s] -> [%s]",
-			ft_strlcpy(dest1, &src[p], size), dest1, result);
+			"\t\t ft_strlcat : [%zu]-[%s] -> [%s]",
+			ft_strlcat(dest1, &src[p], size), dest1, result);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
-			rows - (rows - (x += 2)), "\t\t strlcpy    : [%zu]-[%s]",
-			strlcpy(dest2, &src[p], size), dest2);
+			rows - (rows - (x += 2)), "\t\t strlcat    : [%zu]-[%s]",
+			strlcat(dest2, &src[p], size), dest2);
 		if (memcmp(dest1, dest2, size) == 0)
 		{
 			if ((size_t)atoi(argv[1]) >= strlen(src) + 1
@@ -67,7 +69,7 @@ void	ft_strlcpy_test(int cols, int rows, int argc, char **argv)
 					rows - (rows - (x += 2)), "\t\t %s\"%s%s\" -> %s-[%zu]%s:"
 					" returned as expected.%s\n\t\t\t\t\t",
 					IGR, BHYE, src, dest1,
-					ft_strlcpy(dest1, &src[p], size), IGR, CR);
+					ft_strlcat(dest1, &src[p], size), IGR, CR);
 				x += 1;
 			}
 			else
