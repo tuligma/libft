@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 18:02:54 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/09 18:52:55 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/09 19:27:22 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ void	ft_strlcat_test(int cols, int rows, int argc, char **argv)
 		return ;
 	}
 	x = 11;
-	p = position(argv[3]);
-	src = str_checker(argv[3]);
 	dest1 = malloc(sizeof(char *) * atoi(argv[1]));
 	dest2 = malloc(sizeof(char *) * atoi(argv[1]));
 	if (dest1 == NULL || dest2 == NULL)
 		return ;
+	strncpy(dest1, argv[2], strlen(argv[2]) + 1);
+	strncpy(dest2, argv[2], strlen(argv[2]) + 1);
+	p = position(argv[3]);
+	src = str_checker(argv[3]);
 	size = atoi(argv[4]);
-	strcpy(dest1, argv[2]);
-	strcpy(dest2, argv[2]);
 	if (ft_strlcat(dest1, &src[p], size) == strlcat(dest2, &src[p], size))
 		result = "\e[1;92mOK\e[0m";
 	else
@@ -51,7 +51,7 @@ void	ft_strlcat_test(int cols, int rows, int argc, char **argv)
 	{
 		display_test_info(info);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
-			rows - (rows - (x += 3)), "\t\t \"%s[%s, %s, %zu]%s\" <- [%s%p%s]",
+			rows - (rows - (x += 3)), "\t\t \"%s[%s, %s, %s, %zu]%s\" <- [%s%p%s]",
 			BHYE, argv[1], argv[2], src, size, CR, IGR, &argv[2], CR);
 		move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
 			rows - (rows - (x += 2)),
@@ -62,14 +62,16 @@ void	ft_strlcat_test(int cols, int rows, int argc, char **argv)
 			strlcat(dest2, &src[p], size), dest2);
 		if (memcmp(dest1, dest2, size) == 0)
 		{
+			bzero(dest1, atoi(argv[1]));
+			strcpy(dest1, argv[2]);
 			if ((size_t)atoi(argv[1]) >= strlen(src) + 1
 				&& p <= strlen(src) + 1)
 			{
 				move_cursor_center(((cols - strlen(L_FUNCTION)) / 2) / 2,
-					rows - (rows - (x += 2)), "\t\t %s\"%s%s\" -> %s-[%zu]%s:"
+					rows - (rows - (x += 2)), "\t\t %s\"%s%s\" -> [%zu]-%s%s:"
 					" returned as expected.%s\n\t\t\t\t\t",
-					IGR, BHYE, src, dest1,
-					ft_strlcat(dest1, &src[p], size), IGR, CR);
+					IGR, BHYE, src,
+					ft_strlcat(dest1, &src[p], size), dest1, IGR, CR);
 				x += 1;
 			}
 			else
