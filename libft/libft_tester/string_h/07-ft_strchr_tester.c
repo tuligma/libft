@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr_tester.c                                 :+:      :+:    :+:   */
+/*   07-ft_strchr_tester.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 23:27:27 by npentini          #+#    #+#             */
-/*   Updated: 2023/05/30 23:50:32 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/13 23:26:55 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	{
 		s = argv[1];
 		c = (unsigned char)argv[2][0];
-		result = ft_strchr(s, c);
+		result = ft_strchr(s + 3, c);
 		printf("Original string: %s\n", s);
 		if (result != NULL)
 		{
