@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 00:59:01 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/06 01:30:24 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/20 04:25:03 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*node;
 
-	new_list = NULL;
-	node = NULL;
-	if (lst == NULL || f == NULL || del == NULL)
+	if (!lst || !f || !del)
 		return (NULL);
-	while (lst != NULL)
+	new_list = NULL;
+	while (lst)
 	{
 		content = f(lst->content);
 		node = ft_lstnew(content);
-		if (content == NULL || node == NULL)
-		{
+		if (!content || !node)
+		{	
 			ft_lstclear(&new_list, del);
 			ft_lstclear(&lst, del);
-			if (node == NULL)
+			if (!node)
 				del(lst->content);
 			return (NULL);
 		}

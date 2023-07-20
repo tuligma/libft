@@ -1,31 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_tester.c                            :+:      :+:    :+:   */
+/*   ft_lstsize_tester.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 21:22:21 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/19 22:15:58 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/19 21:58:20 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
-
-void	print_linked_list(t_list *head)
-{
-	t_list	*current;
-
-	current = head;
-	while (current != NULL)
-	{
-		printf("Node - Content: %s\n", (char *)current->content);
-		if (current->next == NULL)
-			printf("Reached the end of the linked list.\n");
-		current = current->next;
-	}
-}
 
 int	main(int argc, char **argv)
 {
@@ -33,14 +19,13 @@ int	main(int argc, char **argv)
 	t_list	*head;
 	t_list	*current;
 	t_list	*next;
-	char	*add_back;
 	int		i;
+	int		count_nodes;
 
-	if (argc == 2)
+	if (argc > 2)
 	{
-		char *contents[] = {"loves", "42", "Abu", "Dhabi"};
-		i = 0;
-		node = ft_lstnew(contents[i]);
+		i = 1;
+		node = ft_lstnew(argv[i]);
 		if (node != NULL)
 		{
 			head = node;
@@ -52,9 +37,9 @@ int	main(int argc, char **argv)
 			return (1);
 		}
 		i++;
-		while (i < 4)
+		while (i < argc)
 		{
-			node = ft_lstnew(contents[i]);
+			node = ft_lstnew(argv[i]);
 			if (node != NULL)
 			{
 				current->next = node;
@@ -64,21 +49,17 @@ int	main(int argc, char **argv)
 				printf("Node creation failed for argument %d\n", i);
 			i++;
 		}
-		printf("Contents of all nodes before:\n");
-		print_linked_list(head);
-		add_back = argv[1];
-		node = ft_lstnew(add_back);
-		if (node != NULL)
+		printf("Contents of all nodes:\n");
+		current = head;
+		while (current != NULL)
 		{
-			ft_lstadd_back(&head, node);
-			printf("\nContents of all nodes after:\n");
-			print_linked_list(head);
+			printf("Node - Content: %s\n", (char *)current->content);
+			if (current->next == NULL)
+				printf("Reached the end of the linked list.\n");
+			current = current->next;
 		}
-		else
-		{
-			printf("Node creation failed for argument %d\n", i);
-			return (1);
-		}
+		count_nodes = ft_lstsize(head);
+		printf("Total nodes are: %i\n", count_nodes);
 		current = head;
 		while (current != NULL)
 		{

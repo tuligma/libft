@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 00:39:56 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/06 00:45:23 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/20 02:36:35 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	next = NULL;
 	if (lst == NULL || del == NULL)
 		return ;
-	else
+	while (current != NULL)
 	{
-		while (current != NULL)
-		{
-			next = current->next;
-			del(current->content);
-			free(current);
-			current = next;
-		}
+		next = current->next;
+		del(current->content);
+		free(current);
+		current = next;
 	}
 	*lst = NULL;
 }
