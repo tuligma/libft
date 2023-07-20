@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 00:04:42 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/06 00:28:21 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:43:31 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,9 @@ void	ft_lstadd_back(t_list **list, t_list *new)
 	{
 		*list = new;
 		return ;
-	}
-	else
-	{	
-		last_node = *list;
-		while (last_node->next != NULL)
-		{
-			last_node = last_node->next;
-		}
-		last_node->next = new;
-	}
+	}	
+	last_node = *list;
+	while (last_node->next != NULL)
+		last_node = last_node->next;
+	last_node->next = new;
 }
