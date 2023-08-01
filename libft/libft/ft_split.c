@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:50:23 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/08 20:50:49 by npentini         ###   ########.fr       */
+/*   Updated: 2023/07/31 09:04:05 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ char	**ft_split(char const *s, char c)
 	char	**arr;
 	int		k;
 
+	if (s == NULL)
+		return (NULL);
 	dest = (char **)malloc(sizeof(char *) * (count_word(s, c)));
 	if (dest == NULL)
 		return (NULL);
