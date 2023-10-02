@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 00:04:42 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/20 12:43:31 by npentini         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:59:53 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ void	ft_lstadd_back(t_list **list, t_list *new)
 {
 	t_list	*last_node;
 
-	if (list == NULL || new == NULL)
+	if (!list || !new)
 		return ;
-	else if (*list == NULL)
+	else if (!*list)
 	{
 		*list = new;
 		return ;

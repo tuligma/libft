@@ -6,7 +6,7 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 23:52:18 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/06 00:01:28 by npentini         ###   ########.fr       */
+/*   Updated: 2023/10/02 12:05:57 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == NULL)
+	if (!lst)
 		return (NULL);
-	while (lst->next != NULL)
+	while (lst->next)
 	{
 		lst = lst->next;
 	}

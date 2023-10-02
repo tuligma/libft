@@ -6,19 +6,11 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:50:23 by npentini          #+#    #+#             */
-/*   Updated: 2023/07/31 09:04:05 by npentini         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:59:19 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	on(char s, char c)
-{
-	if (s == c)
-		return (0);
-	else
-		return (1);
-}
 
 static int	count_word(char const *s, char c)
 {
@@ -29,10 +21,10 @@ static int	count_word(char const *s, char c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (on(s[i], c))
+		if (s[i] != c)
 		{
 			count_word++;
-			while (s[i] != '\0' && on(s[i], c))
+			while (s[i] != '\0' && s[i] != c)
 				i++;
 		}
 		else
@@ -62,6 +54,27 @@ static char	*ft_range(char const *s, size_t start, size_t end)
 	return (dest);
 }
 
+/*static void	free1(void *ptr)
+{
+	if (ptr != NULL)
+		free(ptr);
+}*/
+
+static char	**free_me(char **dest, char const *s, char c)
+{
+	int	k;
+
+	k = 0;
+	while (k < count_word(s, c))
+	{
+		if (dest[k] != NULL)
+			free(dest[k]);
+		k++;
+	}
+	free(dest);
+	return (NULL);
+}
+
 static char	**splitter(char **dest, char const *s, char c)
 {
 	size_t	i;
@@ -72,16 +85,16 @@ static char	**splitter(char **dest, char const *s, char c)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		while (!on(s[i], c) && s[i] != '\0')
+		while (s[i] == c && s[i] != '\0')
 			i++;
-		if (on(s[i], c) && s[i] != '\0')
+		if (s[i] != c && s[i] != '\0')
 		{
 			start = i;
-			while (on(s[i], c) && s[i] != '\0')
+			while (s[i] != c && s[i] != '\0')
 				i++;
 			dest[j] = ft_range(s, start, i);
 			if (dest[j] == NULL)
-				return (NULL);
+				return (free_me(dest, s, c));
 			j++;
 		}
 	}
@@ -92,25 +105,11 @@ static char	**splitter(char **dest, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**dest;
-	char	**arr;
-	int		k;
 
 	if (s == NULL)
 		return (NULL);
-	dest = (char **)malloc(sizeof(char *) * (count_word(s, c)));
+	dest = ft_calloc(count_word(s, c), sizeof(char *));
 	if (dest == NULL)
 		return (NULL);
-	arr = splitter(dest, s, c);
-	if (arr == NULL)
-	{
-		k = 0;
-		while (k < count_word(s, c))
-		{
-			free(arr[k]);
-			k++;
-		}
-		free(arr);
-		return (NULL);
-	}
-	return (arr);
+	return (splitter(dest, s, c));
 }
