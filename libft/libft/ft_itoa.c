@@ -6,11 +6,12 @@
 /*   By: npentini <npentini@student.42abudhabi.ae>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 00:31:39 by npentini          #+#    #+#             */
-/*   Updated: 2023/06/03 00:50:38 by npentini         ###   ########.fr       */
+/*   Updated: 2023/10/06 07:58:29 by npentini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_numlen(int n)
 {
@@ -38,16 +39,13 @@ static char	*min_conversion(void)
 	char	*src;
 	int		i;
 
-	i = 0;
+	i = -1;
 	src = "-2147483648";
 	str = (char *)malloc(sizeof(char) * 12);
 	if (str == NULL)
 		return (NULL);
-	while (src[i] != '\0')
-	{
+	while (src[++i] != '\0')
 		str[i] = src[i];
-		i++;
-	}
 	str[i] = '\0';
 	return (str);
 }
@@ -67,8 +65,7 @@ static char	*conversion(int n, int len, char *str)
 	}
 	while (n > 0)
 	{
-		len--;
-		str[len] = (n % 10) + '0';
+		str[--len] = (n % 10) + '0';
 		n /= 10;
 	}
 	return (str);

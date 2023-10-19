@@ -10,6 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+	 *	Function:		ft_isdigit
+ 	*	Header:			libft.h
+ 	*	Prototype:		int	ft_isdigit(int c)
+ 	*	Description:	This function checks if the given character is a digit
+	*					character. Within the range of (0-9).
+ 	* 	Return:			If the given character is a digit character it
+	*					returns 1, otherwise 0.
+*/
+
 #include "libft.h"
 
 int	ft_isdigit(int c)

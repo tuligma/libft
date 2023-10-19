@@ -10,6 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ *	Function:		ft_isalnum
+ *	Header:			libft.h
+ *	Prototype:		int	ft_isalnum(int c)
+ *	Description:	This function checks if the given character is an alphanumeric
+ *					character. Within the range of (a-z),(A-Z) or (0-9).
+ * 	Return:			If the given character is an alphanumeric character it 
+ * 					returns 1, otherwise 0.
+*/
+
 #include "libft.h"
 
 int	ft_isalnum(int c)
