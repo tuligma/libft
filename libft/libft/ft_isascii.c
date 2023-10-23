@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 /*
- *	Function:		ft_isascii
- *	Header:			libft.h
- *	Prototype:		int	ft_isascii(int c)
+ *	Function:   	ft_isascii
+ *	Header:     	libft.h
+ *	Prototype:  	int	ft_isascii(int c)
  *	Description:	This function checks if the given character is an ASCII
- *					character, within the range of (0-127).
- * 	Return:			If the given character is an ASCII character 
- * 					it returns 1, otherwise 0.
+ *	            	character, within the range of (0-127).
+ * 	Return:     	If the given character is an ASCII character 
+ * 	            	it returns 1, otherwise 0.
 */
 
 #include "libft.h"

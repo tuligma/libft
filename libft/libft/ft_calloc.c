@@ -20,6 +20,9 @@
 	*	            	each of 'size' bytes, and initializes all bytes to zero.
 	*	Return:     	Returns a pointer to the allocated memory if successful,
 	*	            	or NULL on failure.
+	*	External Functions:
+	*	            	1.	malloc
+	*	            	2.	ft_bzero
 	*	Walkthrough:
 	*	            	1.	Declare a pointer to void, 'ptr', to store the allocated memory.
 	*	            		A void pointer (void *) is used here to allow  for generic memory

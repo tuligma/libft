@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 /*
- *	Function:		ft_isprint
- *	Header:			libft.h
- *	Prototype:		int	ft_isprint(int c)
+ *	Function:   	ft_isprint
+ *	Header:     	libft.h
+ *	Prototype:  	int	ft_isprint(int c)
  *	Description:	This function checks if the given character is an ASCII
- *					printable character. Within the range of  ASCII (32-126).
- * 	Return:			If the given character is an ASCII printable character it
- * 					returns 1, otherwise 0.
+ *	            	printable character. Within the range of  ASCII (32-126).
+ * 	Return:     	If the given character is an ASCII printable character it
+ * 	            	returns 1, otherwise 0.
 */
 
 #include "libft.h"

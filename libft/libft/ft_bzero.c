@@ -18,6 +18,7 @@
 	*	           		n (size_t): the number of bytes to zero.
 	*	Description:	This function sets the first 'n' bytes of the memory pointed to 
 	*	            	by 's' to zero. This function is used to clear a block of memory.
+	*	Return:			None.
 	*	Walkthrough:
 	*	            	1.	Declare a pointer to unsigned char, p. Using Using 'unsigned char'
 	*	            		is important because it ensures that the value 0 is stored in memory

@@ -21,6 +21,8 @@
 	*					('+' and '-'), and parses the integer part. The result is
 	*					returned as integer.
 	*	Return:			The integer value parsed from the input string 'nptr'.
+	*	External Functions:
+	*	            	None.
 	*	Walkthrough:
 	*					1.	The function takes a null-terminated string 'nptr' as input.
 	*					2.	It initializes the 'sign' variable to 1 and result to 0.
