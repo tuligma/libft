@@ -27,15 +27,16 @@
 	*	            	1.	The function takes an integer 'c' as input.
 	*	            	2.	It checks if 'c' is within the range of uppercase
 	*	            		letters (A-Z).
-	*	            	3.	If 'c' is an uppercase letter, it adds 32 to 'c' to convert it
-	*	            		to the correspondin lowercase character code.
-	*	            	4.	It returns the modified 'c' or the original 'c' if 'c' is
-	*	            		not an uppercase letter.
+	*	            	3.	If 'c' is an uppercase letter, it adds 32 to 'c'
+	*	            		to convert it to the correspondin lowercase
+	*	            		character code.
+	*	            	4.	It returns the modified 'c' or the original 'c'
+	*	            		if 'c' is not an uppercase letter.
 	*	Summary:
-	*	            	The ft_tolower function converts an ASCII character code to its
-	*	            	corresponding lowercase character code if the input character is an
-	*	            	uppercase letter. If the input character is not an uppercase letter,
-	*	            	it returns the input character unchanged.
+	*	            	The ft_tolower function converts an ASCII character code to
+	*	            	its corresponding lowercase character code if the input character
+	*	            	is an uppercase letter. If the input character is not an
+	*	            	uppercase letter, it returns the input character unchanged.
 	*	Usage:
 	*	            	```c
 	*	            	#include <stdio.h>

@@ -28,26 +28,30 @@
 	*	External Functions:
 	*	            	None.
 	*	Walkthrough:
-	*	            	1.	Declare two pointer to unsigned char, p1 and p2. Using 'unsigned char'
-	*	            		is essential to ensure that the function works with values
-	*	            		ranging from 0 to 255 without encountering sign extention issues.
-	*	            	2.	Assign the value of 's1' to 'p1' and s2 to p2, making 'p1' and p2 
-	*	            		pointing to the start of the memory block.
-	*	            	3.	Enter a loop that runs 'n' times or until a difference is found.
+	*	            	1.	Declare two pointer to unsigned char, p1 and p2.
+	*	            		Using 'unsigned char' is essential to ensure that the
+	*	            		function works with values ranging from 0 to 255 without
+	*	            		encountering sign extention issues.
+	*	            	2.	Assign the value of 's1' to 'p1' and s2 to p2, making
+	*	            		'p1' and 'p2' pointing to the start of the memory block.
+	*	            	3.	Enter a loop that runs 'n' times or until a difference
+	*	            		is found.
 	*	            	4.	Inside the loop, compare the value at the current memory
 	*	            		locations pointed to by 'p1' and 'p2'.
 	*	            	5.	If a difference is found, return the difference between the 
 	*	            		two bytes as an integer.
-	*	            	6. 	Increment the 'p1' and 'p2' to point to the next memory addresses.
+	*	            	6. 	Increment the 'p1' and 'p2' to point to the next
+	*	            		memory addresses.
 	*	            	7.	If no difference is found after comparing the 'n' bytes,
 	*	            		it will return 0.
 	*	Summary:
-	*	            	The ft_memcmp function compares the content of two memory blocks,
-	*	            	's1' and 's2', by examining the first 'n' bytes. It ensures a safe
-	*	            	comparison of memory blocks and return an integer indicating whether
-	*	            	the blocks are equal or one is greater or less than the other.
-	*	            	This function is commonly used to check the equality of memory
-	*	            	blocks and compare them based on their ASCII value.
+	*	            	The ft_memcmp function compares the content of two memory
+	*	            	blocks, 's1' and 's2', by examining the first 'n' bytes.
+	*	            	It ensures a safe comparison of memory blocks and return an
+	*	            	integer indicating whether the blocks are equal or one is
+	*	            	greater or less than the other. This function is commonly
+	*	            	used to check the equality of memory blocks and compare them
+	*	            	based on their ASCII value.
 	*	Usage:
 	*	            	```c
 	*	            	#include <stdio.h>  // Include the necessary header for printf

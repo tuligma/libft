@@ -93,9 +93,10 @@
 	*	            		-	Continue to the end of the current word.
 	*	            		-	Create a substring using 'ft_range' and store it in
 	*	            			'dest[j]'.
-	*	            		-	If memory allocation fails, free the previously allocated
-	*	            			memory using 'free_me'.
-	*	            	3.	It will continue till 's' the end of string has been processed.
+	*	            		-	If memory allocation fails, free the previously
+	*	            			allocated memory using 'free_me'.
+	*	            	3.	It will continue till 's' the end of string has been
+	*	            		processed.
 	*	            	4.	NULL-terminate 'dest[j]' and return 'dest'.
 	*					
 	*	Summary:

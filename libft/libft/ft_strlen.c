@@ -54,8 +54,8 @@
 	*	            	}
 	*	            	```
 	*	Undefined Behavior:
-	*	            	1.	Segmentation Fault (SIGSEGV): Occurs if the input string 's' is a 
-	*	            		NULL pointer or if string 's' is uninitialized.
+	*	            	1.	Segmentation Fault (SIGSEGV): Occurs if the input string
+	*	            		's' is a NULL pointer or if string 's' is uninitialized.
 	*/
 
 #include "libft.h"

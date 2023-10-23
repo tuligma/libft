@@ -13,7 +13,8 @@
 /*
 	*	Function:   	ft_strnstr
 	*	Header:     	libft.h
-	*	Prototype:  	char *ft_strnstr(const char *big, const char *little,  size_t len)
+	*	Prototype:  	char *ft_strnstr(const char *big,
+	*	            					const char *little,  size_t len)
 	*	Parameters: 	big (const char *):		The main null-terminated string
 	*	            							to search within.
 	*	            	little (const char *):	The null-terminated substring

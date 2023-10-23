@@ -17,36 +17,40 @@
 	*	Parameters: 	s (void *):	a pointer to the memory area to be filled.
 	*	            	c (int):	the value to be set to.
 	*	            	n (size_t):	the number of byte to be set to the value 'c'.
-	*	Description:	This function fills the first 'n' bytes of memory area pointed
-	*	            	to by 's' with the constant byte 'c'.
+	*	Description:	This function fills the first 'n' bytes of memory area
+	*	            	pointed to by 's' with the constant byte 'c'.
 	*	Return:     	Returns a pointer to the memory area 's'.
 	*	External Functions:
 	*	            	None.
 	*	Walkthrough:
-	*	            	1.	Declare a pointer to an unsigned char, 'p', Using 'unsigned char'
-	*	            		is important because it ensures that the value 'c' is stored in
-	*	            		memory without any sign extension issues. It allows 'p' to represent
+	*	            	1.	Declare a pointer to an unsigned char, 'p', Using
+	*	            		'unsigned char' is important because it ensures that
+	*	            		the value 'c' is stored in memory without any sign
+	*	            		extension issues. It allows 'p' to represent
 	*	            		values from 0 to 255 (0xFF).
-	*	            	2.	Assign the address of 's' to 'p', making 'p' the point to the start
-	*	            		of the memory block.
-	*	            	3.	Declare an unsigned char variable 'x' and assign it to the value of
-	*	            		'c'. This ensure that 'x' holds the constant byte value to be copied
-	*	            		into the memory.
-	*	            	4.	Enter a loop  that runs 'n' times, effectively iterating through the
-	*	            		first 'n' bytes of the memory area 's'.
-	*	            	5.	Inside the loop, us dereferencing ('*p') to set the value at the
-	*	            		current memory location pointed to by 'p' to the constant byte 'x'.
-	*	            		This effectively replaces the current byte in the memory with the
-	*	            		value of 'x'.
-	*	            	6.	Increment 'p' to point to the next byte in memory, ensuring that the
-	*	            		next iteration of the loop will operate on the next byte in memory.
-	*	            	7.	Repeat the loop until 'n' bytes has been set to the constant value 'x'.
-	*	            	8.	Return the pointer to the memory area 's' to indicate that the memory
-	*	            		has been set, and it contains 'n' bytes, each set to the value 'x'. 
+	*	            	2.	Assign the address of 's' to 'p', making 'p' the
+	*	            		point to the start of the memory block.
+	*	            	3.	Declare an unsigned char variable 'x' and assign it
+	*	            		to the value of 'c'. This ensure that 'x' holds the
+	*	            		constant byte value to be copied into the memory.
+	*	            	4.	Enter a loop  that runs 'n' times, effectively iterating
+	*	            		through the first 'n' bytes of the memory area 's'.
+	*	            	5.	Inside the loop, us dereferencing ('*p') to set the value
+	*	            		at the current memory location pointed to by 'p' to the
+	*	            		constant byte 'x'.This effectively replaces the current
+	*	            		byte in the memory with the value of 'x'.
+	*	            	6.	Increment 'p' to point to the next byte in memory,
+	*	            		ensuring that the next iteration of the loop will operate
+	*	            		on the next byte in memory.
+	*	            	7.	Repeat the loop until 'n' bytes has been set to the
+	*	            		constant value 'x'.
+	*	            	8.	Return the pointer to the memory area 's' to indicate that
+	*	            		the memory has been set, and it contains 'n' bytes, each
+	*	            		set to the value 'x'. 
 	*	Summary:
-	*	            	The ft_memset function sets 'n' bytes in the memory area 's' to the 
-	*	            	constant value of 'c' and returns the pointer to the memory area 's'
-	*	            	after 'n' bytes has been set to the constant 'c'.
+	*	            	The ft_memset function sets 'n' bytes in the memory area 's'
+	*	            	to the constant value of 'c' and returns the pointer to the
+	*	            	memory area 's' after 'n' bytes has been set to the constant 'c'.
 	*	Usage:
 	*	            	```c
 	*	            	#include <stdio.h>  // Include the necessary header for printf

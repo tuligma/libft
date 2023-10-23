@@ -23,19 +23,23 @@
 	*	External Functions:
 	*	            	None.
 	*	Walkthrough:
-	*	            	1.	Declare two pointers to unsigned char, 'd' for destination
-	*	            		and 's' for the source. the unsigned char is essential to ensure
-	*	            		that the function works with values ranging from 0 to 255
-	*	            		without encountering sign extention issues.
-	*	            	2.	Assign the value of 'dest' to 'd' and 'src' to 's', making 
-	*	            		'd' and 's' point to the start of their respective memory block.
+	*	            	1.	Declare two pointers to unsigned char, 'd' for
+	*	            		destination and 's' for the source. the unsigned char
+	*	            		is essential to ensure that the function works with
+	*	            		values ranging from 0 to 255 without encountering sign
+	*	            		extention issues.
+	*	            	2.	Assign the value of 'dest' to 'd' and 'src' to 's', 
+	*	            		making 'd' and 's' point to the start of their
+	*	            		respective memory block.
 	*	            	3.	Check if 'd' and 's' are both NULL pointers.If they are,
-	*	            		it returns NULL. to indicate an error (potential segmentation fault)
-	*	            	4.	If 's' is ahead of 'd' (no overlap), copy data from 'src' to 'dest'
-	*	            		moving forward.
+	*	            		it returns NULL. to indicate an error
+	*	            		(potential segmentation fault)
+	*	            	4.	If 's' is ahead of 'd' (no overlap), copy data from
+	*	            		'src' to 'dest' moving forward.
 	*	            		a.	Use a loop that runs 'n' times.
-	*	            		b.	In each iteration, decerement 'n' by 1 and copy the byte from
-	*	            			'src' to 'dest' and increment both s and d to point 
+	*	            		b.	In each iteration, decerement 'n' by 1 and copy
+	*	            			the byte from 'src' to 'dest' and increment both
+	*	            			s and d to point 
 	*	            			to the next addresses.
 	*	            	5.	If 's' overlaps with dest. (e.g. 'src' is behind 'dest'),
 	*	            		copy data from 'src' to 'dest' moving backward.
@@ -44,9 +48,9 @@
 	*	            		at position 'n' of both 's' and 'n'.
 	*	            	6.	Return a pointer to the destination memory ('dest').
 	*	Summary:
-	*	            	The ft_memmove function copies 'n' bytes from 'src' to 'dest' memory
-	*	            	ensuring data integrity even if the source and destination memory
-	*	            	regions overlap.
+	*	            	The ft_memmove function copies 'n' bytes from 'src' to 'dest'
+	*	            	memory ensuring data integrity even if the source and
+	*	            	destination memory regions overlap.
 	*	Usage:
 	*	            	```c
 	*	            	#include <stdio.h>  // Include the necessary header for printf

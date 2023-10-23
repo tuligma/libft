@@ -38,8 +38,8 @@
 	*					5.	Inside the loop, the function 'f' is applied to the current
 	*	            		character and 'i'. This allow 'f' to perform some operation
 	*	            		on the character and its index.
-	*	            	6.	'i' and 's' are incremented to move to the next character in the
-	*	            		string.
+	*	            	6.	'i' and 's' are incremented to move to the next character
+	*	            		in the string.
 	*	            	7.	The loop continues, if applying 'f' to each character in 's'.
 	*					
 	*	Summary:

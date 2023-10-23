@@ -16,29 +16,33 @@
 	*	Prototype:  	void *ft_calloc(size_t nmemb, size_t size)
 	*	Parameters:  	nmemb (size_t):	the number of elements to allocate.
 	*	            	size (size_t): 	the size, in bytes, of each elements.
-	*	Description:	This function allocates memory for an array of 'nmemb' elements, 
-	*	            	each of 'size' bytes, and initializes all bytes to zero.
+	*	Description:	This function allocates memory for an array of 'nmemb'
+	*	            	elements, each of 'size' bytes, and initializes all
+	*	            	bytes to zero.
 	*	Return:     	Returns a pointer to the allocated memory if successful,
 	*	            	or NULL on failure.
 	*	External Functions:
 	*	            	1.	malloc
 	*	            	2.	ft_bzero
 	*	Walkthrough:
-	*	            	1.	Declare a pointer to void, 'ptr', to store the allocated memory.
-	*	            		A void pointer (void *) is used here to allow  for generic memory
-	*	            		allocations. It does not have a specific data type associated with
-	*	            		it, so it can be used for any type of data.
-	*	            	2.	Declare a size_t variable 'total_size' and initialize it with
-	*	            		the product of 'nmemb' and 'size'. This calculates the total
-	*	            		memory required for the allocation.
-	*	            	3.	Check for potential overflow or invalid values of 'size' and 
-	*	            		total_size to prevent undefined behavior. If any issues are
-	*	            		detected, return NULL to indicate failure.
-	*	            	4.	Allocate 'total_size' bytes of memory using the 'malloc' function
-	*	            		and assign the allocated memory to the 'ptr' pointer.
-	*	            	5.	Check if memory allocation is successful. If 'malloc, returns NULL.
-	*	            		return NULL to indicate the allocation failure.
-	*	            	6. 	Use 'ft_bzero' function to initialize the allocated memory to zero.
+	*	            	1.	Declare a pointer to void, 'ptr', to store the
+	*	            		allocated memory. A void pointer (void *) is used here
+	*	            		to allow  for generic memory allocations. It does not 
+	*	            		have a specific data type associated with it, so it can
+	*	            		be used for any type of data.
+	*	            	2.	Declare a size_t variable 'total_size' and initialize
+	*	            		it with the product of 'nmemb' and 'size'. This
+	*	            		calculates the totalmemory required for the allocation.
+	*	            	3.	Check for potential overflow or invalid values of 'size'
+	*	            		and total_size to prevent undefined behavior. If any
+	*	            		issues are detected, return NULL to indicate failure.
+	*	            	4.	Allocate 'total_size' bytes of memory using the 'malloc'
+	*	            		function and assign the allocated memory to the
+	*	            		'ptr' pointer.
+	*	            	5.	Check if memory allocation is successful. If 'malloc,
+	*	            	returns NULL. return NULL to indicate the allocation failure.
+	*	            	6. 	Use 'ft_bzero' function to initialize the allocated
+	*	            		memory to zero.
 	*	            	7.	Return the pointer 'ptr' to the allocated memory,
 	*	            		which has been initialized to all zeros.
 	*	Summary:
@@ -48,8 +52,8 @@
 	*	            	memory or NULL if allocation fails.					
 	*	Usage:
 	*	            	```c
-	*	            	#include <stdio.h>      // Include the necessary header for printf
-	*	            	#include "libft.h"		// Include the libft header
+	*	            	#include <stdio.h> // Include the necessary header for printf
+	*	            	#include "libft.h" // Include the libft header
 	*
 	*	            	int	main(void)
 	*	            	{

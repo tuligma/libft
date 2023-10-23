@@ -35,14 +35,14 @@
 	*	            	4.	In each iteration of the loop, it uses the 'write' system call
 	*	            		to write a single character from the string 's' to the
 	*	            		specified file descriptor 'fd'.
-	*	            	5.	After writing the entire string, it uses the 'write' system call
-	*	            		again to write a newline character '\n' to the specified file
-	*	            		descriptor 'fd'.
+	*	            	5.	After writing the entire string, it uses the 'write'
+	*	            		system call again to write a newline character '\n'
+	*	            		to the specified file descriptor 'fd'.
 	*	Summary:
-	*	            	The ft_putendl_fd function writes a string 's' to the specified
-	*	            	file descriptor 'fd' character by character until null-terminator
-	*	            	is reached and appends a newline character '\n' to the end of the 
-	*	            	string.
+	*	            	The ft_putendl_fd function writes a string 's' to the
+	*	            	specified file descriptor 'fd' character by character
+	*	            	until null-terminator is reached and appends a newline
+	*	            	character '\n' to the end of the string.
 	*	Usage:
 	*	            	```c
 	*	            	#include "libft.h"  // Include the libft header
@@ -57,12 +57,14 @@
 	*					}
 	*					```
 	*	Undefined Behavior:
-	*	            	1.	Invalid File Descriptor: Using an invalid or negative file
-	*	            		descriptor as 'fd' when calling 'write' function, as in
-	*	            		'write(fd, &c, 1)', is undefined behavior. It can lead to
-	*	            		unpredictable result and is not a valid use of this function.
-	*	            	2.	Null Pointer (Segmentation Fault): If the input string 's' is
-	*	            		a null pointer, it will result in a segmentation fault.
+	*	            	1.	Invalid File Descriptor: Using an invalid or 
+	*	            		negative file descriptor as 'fd' when calling
+	*	            		'write' function, as in 'write(fd, &c, 1)', is
+	*	            		undefined behavior. It can lead to unpredictable
+	*	            		result and is not a valid use of this function.
+	*	            	2.	Null Pointer (Segmentation Fault): If the input
+	*	            		string 's' is a null pointer, it will result
+	*	            		in a segmentation fault.
 	*/
 
 #include "libft.h"

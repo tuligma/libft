@@ -22,10 +22,10 @@
 	*	            							extract.
 	*	Description:	This function extracts a substring from the input string 's' 
 	*	            	starting at index 'start' and with a maximum length of 'len'
-	*	            	characters. The extracted substring is returns as a dynamically
-	*	            	allocated null-terminated string.
-	*	Return:     	A pointer to the extracted substring on success, or NULL if any
-	*	            	of the following conditions are met:
+	*	            	characters. The extracted substring is returns as a
+	*	            	dynamically allocated null-terminated string.
+	*	Return:     	A pointer to the extracted substring on success, or NULL
+	*	            	if any of the following conditions are met:
 	*	            	1.	The input string 's' is NULL.
 	*	            	2.	The 'start' index is greater than or equal to the length
 	*	            		of 's'.
@@ -45,8 +45,8 @@
 	*	            		be extracted.
 	*	            	4.	If 'len' is greater than the available characters in 's'
 	*	            		starting from 'start', it adjusted to available length.
-	*	            	5.	The function allocates memory for the substring using malloc
-	*	            		and assign it to the variable 'substr'.
+	*	            	5.	The function allocates memory for the substring using
+	*	            		'malloc' and assign it to the variable 'substr'.
 	*	            	6.	If memory allocation fails, the function returns NULL.
 	*	            	7.	An index variable 'i' is initialized to -1 and incremented
 	*	            		to start the loop for extracting the substring.
@@ -60,7 +60,8 @@
 	*	Summary:
 	*	            	The ft_substr function extracts a substring from input string 's'
 	*	            	and returns it as a dynamically allocated null-terminated string.
-	*	            	It provides checks for invalid input and handles memory allocation.
+	*	            	It provides checks for invalid input and handles
+	*	            	memory allocation.
 	*	Usage:
 	*	            	```c
 	*	            	#include <stdio.h>  // Include the necessary header for printf

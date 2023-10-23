@@ -24,9 +24,10 @@
 	External Functions:
 	*	            	1. ft_strlen
 	*	Walkthrough:
-	*	            	1.	The function takes a string 's' and an integer 'c' as input.
-	*	            	2.	It calculates the length of the string 's' using ft_strlen
-	*	            		and assigns it to the variable 'n'.
+	*	            	1.	The function takes a string 's' and an integer 'c'
+	*	            		as input.
+	*	            	2.	It calculates the length of the string 's' using
+	*	            		'ft_strlen' and assigns it to the variable 'n'.
 	*	            	3.	The variable 'str' is initialized as a pointer to the
 	*	            		beginning of the string 's'. This cast (char *)s is used
 	*	            		to indicate that 'str' is of type 'char *' and allows us
@@ -68,18 +69,20 @@
 	*
 	*	            		result = ft_strchr(str, c);
 	*	            		if (result)
-	*	            			printf("Char '%c' at index %ld -> %s\n", c,result - s, result);
+	*	            			printf("Char '%c' at index %ld -> %s\n",
+	*	            					c, result - s, result);
 	*	            		else
 	*	            			printf("'%c' not found in the first 13 bytes\n", target);
 	*	            		return (0);
 	*	            	}
 	*	            	```
 	*	Undefined Behavior:
-	*	            	1.	Segmentation Fault (SIGSEGV): Occurs if the input string 's' is a 
-	*	            		NULL pointer. If string 's' is uninitialized or both 's' and 'c'
-	*	            		are uninitialized it leads to Segmentation fault.
-	*	            	3.	Unpridictable Return: Occurs if int 'c' is uninitialized. it leads
-	*	            		to undefined behavior when attempting to search nothing. 
+	*	            	1.	Segmentation Fault (SIGSEGV): Occurs if the input string
+	*	            		's' is a NULL pointer. If string 's' is uninitialized or both
+	*	            		's' and 'c' are uninitialized it leads to Segmentation fault.
+	*	            	3.	Unpridictable Return: Occurs if int 'c' is uninitialized.
+	*	            		It leads to undefined behavior when attempting to
+	*	            		search nothing. 
 	*/
 
 #include "libft.h"

@@ -60,11 +60,13 @@
 	*	            	}
 	*
 	*	Undefined Behavior:
-	*	            	1.	Segmentation Fault (SIGSEGV): Occurs if the input string 's' is a 
-	*	            		NULL pointer. If string 's' is uninitialized or both 's' and 'c'
-	*	            		are uninitialized it leads to Segmentation fault.
-	*	            	2.	Unpridictable Return: Occurs if int 'c' is uninitialized. it leads
-	*							to undefined behavior when attempting to search nothing. 
+	*	            	1.	Segmentation Fault (SIGSEGV): Occurs if the input string
+	*	            		's' is a NULL pointer. If string 's' is uninitialized or
+	*	            		both 's' and 'c' are uninitialized it leads to
+	*	            		Segmentation fault.
+	*	            	2.	Unpridictable Return: Occurs if int 'c' is uninitialized.
+	*	            		It leads to undefined behavior when attempting to
+	*	            		search nothing. 
 	*/
 
 #include "libft.h"
