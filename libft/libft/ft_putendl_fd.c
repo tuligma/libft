@@ -23,7 +23,7 @@
 	*	            	character '\n'.
 	*	Return:     	None.
 	*	External Functions:
-	*	            	None.
+	*	            	1. ft_putstr_fd
 	*	Walkthrough:
 	*	            	1.	The function takes two parameters: a string 's' and an
 	*	            		integer 'fd' representing the file descriptor.
@@ -71,10 +71,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	x;
-
-	x = -1;
-	while (s[++x] != '\0')
-		write(fd, &s[x], 1);
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
